@@ -3,15 +3,15 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Simple Servlet Application</display-name>
-  <servlet>
-    <servlet-name>simpleServlet</servlet-name>
-    <servlet-class>MyServlet</servlet-class>
-    <load-on-startup>2</load-on-startup>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>simpleServlet</servlet-name>
-    <url-pattern>/test</url-pattern>
-  </servlet-mapping>
+<!--  <display-name>Simple Servlet Application</display-name>-->
+<!--  <servlet>-->
+<!--    <servlet-name>simpleServlet</servlet-name>-->
+<!--    <servlet-class>lesson2.servlet.MyServlet</servlet-class>-->
+<!--    <load-on-startup>2</load-on-startup>-->
+<!--  </servlet>-->
+<!--  -->
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>simpleServlet</servlet-name>-->
+<!--    <url-pattern>/test</url-pattern>-->
+<!--  </servlet-mapping>-->
 </web-app>
