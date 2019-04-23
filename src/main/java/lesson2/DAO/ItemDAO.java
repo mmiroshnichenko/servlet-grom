@@ -41,12 +41,12 @@ public class ItemDAO {
         }
     }
 
-    public static void delete(long itemId) {
+    public static void delete(Item item) {
         try (Session session = createSessionFactory().openSession()) {
             Transaction tr = session.getTransaction();
             tr.begin();
 
-            session.delete(session.get(Item.class, itemId));
+            session.delete(item);
 
             tr.commit();
         } catch (HibernateException e) {
