@@ -26,39 +26,25 @@ public class MyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletInputStream stream = req.getInputStream();
-        try {
+        try(ServletInputStream stream = req.getInputStream()) {
             ObjectMapper objectMapper = new ObjectMapper();
             Item item = new Item();
             item = objectMapper.readValue(stream, item.getClass());
             resp.getWriter().println(ItemService.save(item));
         } catch (Exception e) {
             resp.getWriter().println(e.getMessage());
-        } finally {
-            try {
-                stream.close();
-            } catch (IOException e) {
-                System.err.println("Closing streams failed");
-            }
         }
     }
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ServletInputStream stream = req.getInputStream();
-        try {
+        try(ServletInputStream stream = req.getInputStream()) {
             ObjectMapper objectMapper = new ObjectMapper();
             Item item = new Item();
             item = objectMapper.readValue(req.getInputStream(), item.getClass());
             resp.getWriter().println(ItemService.update(item));
         } catch (Exception e) {
             resp.getWriter().println(e.getMessage());
-        } finally {
-            try {
-                stream.close();
-            } catch (IOException e) {
-                System.err.println("Closing streams failed");
-            }
         }
     }
 
